@@ -1,0 +1,27 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 8rem;
+  padding: 0 5rem;
+  background-color: #ffd43b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.main-image {
+  z-index: -1;
+  width: 100vw;
+  height: 35rem;
+}
+
+.main-image img {
+  width: 110%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
+  /* transform: rotate(-5deg); */
+}

@@ -1,0 +1,32 @@
+.cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  background-color: #f08c00;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.cart-btn:hover {
+  cursor: pointer;
+  background-color: #fab005;
+}
+
+.cart-btn:hover .badge {
+  background-color: #f08c00;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+}
+
+.badge {
+  padding: 0.8rem;
+  background-color: #fab005;
+  border-radius: 1rem;
+}
