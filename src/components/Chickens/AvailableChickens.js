@@ -1,6 +1,7 @@
 import React from "react";
 
 import classes from "./AvailableChickens.module.css";
+import SingleChicken from "./SingleChicken";
 
 const CHICKENS = [
   {
@@ -36,10 +37,15 @@ const CHICKENS = [
 const AvailableChickens = () => {
   return (
     <section className={classes.chickens}>
-      Hello
-      <ul>
+      <ul className={classes["chickens-list"]}>
         {CHICKENS.map((chicken) => (
-          <li key={chicken.id}>{chicken.type}</li>
+          <SingleChicken
+            id={chicken.id}
+            type={chicken.type}
+            description={chicken.description}
+            eggsPerDay={chicken.eggsPerDay}
+            price={chicken.price}
+          />
         ))}
       </ul>
     </section>

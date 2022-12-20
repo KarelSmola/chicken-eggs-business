@@ -12,3 +12,9 @@ body {
   font-family: sans-serif;
   background-color: #fff3bf;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
