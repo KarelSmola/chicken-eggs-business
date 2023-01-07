@@ -1,11 +1,36 @@
 .chicken {
-  width: 50vw;
   height: 5rem;
   border-radius: 1rem;
   background-color: #ffd43b;
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr 1fr 2fr;
   align-items: center;
-  justify-content: space-between;
+  justify-items: center;
+  align-content: center;
   padding: 1rem 2rem;
   font-size: 2rem;
+}
+
+.amount-form {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.text {
+  justify-self: start;
+}
+
+.input {
+  width: 5rem;
+  border: none;
+  padding: 1rem;
+}
+
+.button {
+  background-color: #f08c00;
+}
+
+.button:hover {
+  background-color: #fab005;
 }

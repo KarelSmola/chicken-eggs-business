@@ -1,0 +1,15 @@
+.container {
+  background-color: #ffd43b;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  justify-items: center;
+  font-size: 1.8rem;
+  padding: 2rem 1rem;
+  font-weight: 600;
+}
+
+.total {
+  justify-self: start;
+}

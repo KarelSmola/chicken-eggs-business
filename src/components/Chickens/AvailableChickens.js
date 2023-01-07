@@ -8,8 +8,9 @@ const CHICKENS = [
     id: "ch-01",
     type: "Brown Chicken",
     description: "The best chicken",
-    eggsPerDay: 5,
+    eggsPerDay: 2,
     price: 10,
+    eggRetailPrice: 0.5,
   },
   {
     id: "ch-02",
@@ -17,13 +18,15 @@ const CHICKENS = [
     description: "Good chicken",
     eggsPerDay: 3,
     price: 5,
+    eggRetailPrice: 0.3,
   },
   {
     id: "ch-03",
     type: "Black Chicken",
     description: "Still good",
-    eggsPerDay: 1,
+    eggsPerDay: 5,
     price: 3,
+    eggRetailPrice: 0.2,
   },
   {
     id: "ch-04",
@@ -31,6 +34,7 @@ const CHICKENS = [
     description: "Chicken Guardian",
     eggsPerDay: 0,
     price: 20,
+    eggRetailPrice: 0,
   },
 ];
 
@@ -45,6 +49,7 @@ const AvailableChickens = () => {
             description={chicken.description}
             eggsPerDay={chicken.eggsPerDay}
             price={chicken.price}
+            eggRetailPrice={chicken.eggRetailPrice}
           />
         ))}
       </ul>

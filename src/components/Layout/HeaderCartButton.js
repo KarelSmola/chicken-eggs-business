@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import CartIcon from "../Cart/CartIcon";
+import ChickenCartContext from "../../store/chicken-cart";
 
 import classes from "./HeaderCartButton.module.css";
 
 const HeaderCartButton = (props) => {
+  const chickenCtx = useContext(ChickenCartContext);
+
+  const chickensAmountInCart = chickenCtx.chickensInCart.reduce(
+    (prev, chicken) => {
+      return prev + chicken.amount;
+    },
+    0
+  );
+
   return (
-    <button className={classes["cart-btn"]}>
+    <button onClick={props.onShowCart} className={classes["cart-btn"]}>
       <span className={classes.icon}>
         <CartIcon />
       </span>
       <span>Your Cart</span>
-      <span className={classes.badge}>3</span>
+      <span className={classes.badge}>{chickensAmountInCart}</span>
     </button>
   );
 };

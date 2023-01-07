@@ -1,0 +1,37 @@
+.chickens-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style-type: none;
+  font-size: 1.6rem;
+}
+
+.chicken {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #ffd43b;
+}
+
+.type {
+  justify-self: start;
+}
+
+.eggs-per-day,
+.amount {
+}
+
+.eggs-per-day {
+}
+
+.amount {
+}
+
+.price {
+}
+
+.rrp {
+}
