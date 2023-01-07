@@ -1,9 +1,18 @@
-.summary {
+.container {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 1rem;
   padding: 2rem;
   background-color: #f59f00;
   border-radius: 2rem;
-  /* width: 50vw; */
+  height: 100%;
+  font-size: 1.6rem;
+}
+
+
+
+.pickupers {
+  display: flex;
+  gap: 2rem;
 }
