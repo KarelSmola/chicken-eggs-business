@@ -1,44 +1,23 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import AddPickuper from "./AddPickuper";
 import PickupersList from "./PickupersList";
 import ChickenCartContext from "../../store/chicken-cart";
 
 import classes from "./PickupersSummary.module.css";
+import PickuperContext from "../../store/pickuper-ctx";
 
 const PickupersSummary = () => {
+  const pickuperCtx = useContext(PickuperContext);
   const chickenCtx = useContext(ChickenCartContext);
-  const [pickupers, setPickupers] = useState([]);
-  const [enteredValue, setEnteredValue] = useState("");
-
-  const pickuperInputChangeHandler = (event) => {
-    setEnteredValue(event.target.value);
-  };
-
-  const addPickuper = (pickuper) => {
-    if (pickupers.length === 3) {
-      return;
-    }
-
-    setPickupers((prevPickupers) => [...prevPickupers, pickuper]);
-  };
-
-  const calc = () => {
-    const eggsPerDay = chickenCtx.chickensInCart.map(
-      (chicken) => chicken.eggsPerDay
-    );
-    console.log(eggsPerDay[0] * (+enteredValue / 100));
-  };
 
   return (
     <div className={classes.container}>
-      <AddPickuper onAddPickuper={addPickuper} />
+      <AddPickuper />
       <PickupersList
-        pickupers={pickupers}
-        onChange={pickuperInputChangeHandler}
-        value={enteredValue}
-        // defaultValue={100}
+        pickupers={pickuperCtx.pickupers}
+        chickens={chickenCtx.chickensInCart}
+        productiveDays={chickenCtx.productiveDays}
       />
-      <button onClick={calc}>Calculate</button>
     </div>
   );
 };

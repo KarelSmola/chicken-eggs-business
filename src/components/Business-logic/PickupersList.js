@@ -10,9 +10,7 @@ const PickupersList = (props) => {
         <Pickuper
           id={pickuper.id}
           name={pickuper.name}
-          onChange={props.onChange}
-          value={props.value}
-          // defaultValue={props.defaultValue}
+          pickuperProductivity={pickuper.productivity}
         />
       ))}
     </ul>

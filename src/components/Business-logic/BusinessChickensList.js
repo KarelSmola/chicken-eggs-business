@@ -9,7 +9,7 @@ const BusinessChickensList = (props) => {
   return (
     <ul className={classes["chickens-list"]}>
       {chickenCtx.chickensInCart.map((chicken) => (
-        <li className={classes.chicken}>
+        <li key={chicken.id} className={classes.chicken}>
           <p className={classes.type}>{chicken.type}</p>
           <p className={classes["eggs-per-day"]}>{chicken.eggsPerDay}</p>
           <p className={classes.amount}>{chicken.amount}x</p>

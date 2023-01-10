@@ -7,7 +7,7 @@ const BusinessHeader = () => {
     <div className={classes["title-container"]}>
       <h1 className={classes.title}>Welcolme to your business page</h1>
       <h2 className={classes["title-small"]}>
-        Let's have a look how profitable will be you business.
+        Let's have a look how profitable your business will be.
       </h2>
     </div>
   );

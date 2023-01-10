@@ -1,22 +1,31 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Button from "../UI/Button";
-
+import PickuperContext from "../../store/pickuper-ctx";
 import classes from "./AddPickuper.module.css";
 
-const AddPickuper = (props) => {
-  const [pickuperName, setPickuperName] = useState("");
+const AddPickuper = () => {
+  const pickuperCtx = useContext(PickuperContext);
+  const [inputName, setInputName] = useState("");
+  const [pickuperProductivity, setPickuperProductivity] = useState(100);
 
-  const inputChangeHandler = (event) => {
-    setPickuperName(event.target.value);
+  const inputNameChangeHandler = (event) => {
+    setInputName(event.target.value);
+  };
+
+  const productivityChangeHandler = (event) => {
+    setPickuperProductivity(event.target.value);
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
-    let newPickuper = { id: Math.random().toString(), name: pickuperName };
 
-    props.onAddPickuper(newPickuper);
+    pickuperCtx.addPickuper({
+      name: inputName,
+      productivity: pickuperProductivity,
+    });
 
-    setPickuperName("");
+    setInputName("");
+    setPickuperProductivity(100);
   };
 
   return (
@@ -26,10 +35,23 @@ const AddPickuper = (props) => {
         <input
           type="text"
           className={classes.input}
-          onChange={inputChangeHandler}
-          value={pickuperName}
+          onChange={inputNameChangeHandler}
+          value={inputName}
         />
-        <Button className={classes.button}>Add pickuper</Button>
+        <label>Productivity</label>
+        <input
+          type="number"
+          step={5}
+          min={0}
+          max={100}
+          className={classes.input}
+          onChange={productivityChangeHandler}
+          value={pickuperProductivity}
+        />
+
+        <Button type="submit" className={classes.button}>
+          Add pickuper
+        </Button>
       </form>
     </div>
   );
