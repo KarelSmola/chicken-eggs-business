@@ -1,20 +1,21 @@
-import React from "react";
-import PickuperContextProvider from "../../store/PickupersContextProvider";
+import React, { Fragment } from "react";
 import ChickensSummary from "./ChickensSummary";
 import BusinessHeader from "./BusinessHeader";
 
 import classes from "./Business.module.css";
 import PickupersSummary from "./PickupersSummary";
+import BusinessSummary from "./BusinessSummary";
 
 const Business = () => {
   return (
-    <PickuperContextProvider>
+    <Fragment>
       <BusinessHeader />
       <main className={classes["main-container"]}>
         <ChickensSummary />
         <PickupersSummary />
       </main>
-    </PickuperContextProvider>
+      <BusinessSummary />
+    </Fragment>
   );
 };
 

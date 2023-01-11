@@ -62,16 +62,18 @@ const Cart = (props) => {
         {!hasChickens && <h2>No chickens in the cart!</h2>}
         <ul className={classes.items}>
           {chickenCtx.chickensInCart.map((item) => (
-            <CartItem
-              key={item.id}
-              type={item.type}
-              description={item.description}
-              eggsPerDay={item.eggsPerDay}
-              price={item.price}
-              amount={item.amount}
-              onAdd={addOneChicken.bind(null, item)}
-              onRemove={removeOneChicken.bind(null, item.id)}
-            />
+            <li key={item.id}>
+              <CartItem
+                
+                type={item.type}
+                description={item.description}
+                eggsPerDay={item.eggsPerDay}
+                price={item.price}
+                amount={item.amount}
+                onAdd={addOneChicken.bind(null, item)}
+                onRemove={removeOneChicken.bind(null, item.id)}
+              />
+            </li>
           ))}
         </ul>
         <div className={classes["items-summary"]}>

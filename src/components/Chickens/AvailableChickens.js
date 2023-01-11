@@ -43,14 +43,16 @@ const AvailableChickens = () => {
     <section className={classes.chickens}>
       <ul className={classes["chickens-list"]}>
         {CHICKENS.map((chicken) => (
-          <SingleChicken
-            id={chicken.id}
-            type={chicken.type}
-            description={chicken.description}
-            eggsPerDay={chicken.eggsPerDay}
-            price={chicken.price}
-            eggRetailPrice={chicken.eggRetailPrice}
-          />
+          <li key={chicken.id}>
+            <SingleChicken
+              id={chicken.id}
+              type={chicken.type}
+              description={chicken.description}
+              eggsPerDay={chicken.eggsPerDay}
+              price={chicken.price}
+              eggRetailPrice={chicken.eggRetailPrice}
+            />
+          </li>
         ))}
       </ul>
     </section>

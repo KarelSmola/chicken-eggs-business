@@ -28,7 +28,7 @@ const SingleChicken = (props) => {
   };
 
   return (
-    <li key={props.id} className={classes.chicken}>
+    <div className={classes.chicken}>
       <div className={classes.text}>{props.type}</div>
       <div className={classes.text}>{props.description}</div>
       <div>{props.eggsPerDay}</div>
@@ -45,7 +45,7 @@ const SingleChicken = (props) => {
         />
         <Button className={classes.button}>Add</Button>
       </form>
-    </li>
+    </div>
   );
 };
 

@@ -5,6 +5,9 @@ const ChickenCartContext = React.createContext({
   chickensInCart: [],
   addChicken: (chicken) => {},
   removeChicken: (chickenId) => {},
+  theoryEggsPerDaySum: "",
+  totalChickensAmunt: "",
+  theoryDayRevenue: "",
 });
 
 export default ChickenCartContext;

@@ -3,6 +3,7 @@ import Header from "./components/Layout/Header";
 import Cart from "./components/Cart/Cart";
 import Chickens from "./components/Chickens/Chickens";
 import ChickensCartContextProvider from "./store/ChickensCartContextProvider";
+import PickupersContextProvider from "./store/PickupersContextProvider";
 import Business from "./components/Business-logic/Business";
 
 function App() {
@@ -24,20 +25,22 @@ function App() {
 
   return (
     <ChickensCartContextProvider>
-      {businessPageIsVisible ? (
-        <Business />
-      ) : (
-        <Fragment>
-          {cartIsVisible && (
-            <Cart onOrder={orderChickens} onClose={closeBackdrop} />
-          )}
-          <Header onShowCart={showCart} />
+      <PickupersContextProvider>
+        {businessPageIsVisible ? (
+          <Business />
+        ) : (
+          <Fragment>
+            {cartIsVisible && (
+              <Cart onOrder={orderChickens} onClose={closeBackdrop} />
+            )}
+            <Header onShowCart={showCart} />
 
-          <main>
-            <Chickens />
-          </main>
-        </Fragment>
-      )}
+            <main>
+              <Chickens />
+            </main>
+          </Fragment>
+        )}
+      </PickupersContextProvider>
     </ChickensCartContextProvider>
   );
 }

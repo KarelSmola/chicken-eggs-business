@@ -3,7 +3,7 @@ import Button from "../UI/Button";
 import PickuperContext from "../../store/pickuper-ctx";
 import classes from "./AddPickuper.module.css";
 
-const AddPickuper = () => {
+const AddPickuper = (props) => {
   const pickuperCtx = useContext(PickuperContext);
   const [inputName, setInputName] = useState("");
   const [pickuperProductivity, setPickuperProductivity] = useState(100);
@@ -48,6 +48,7 @@ const AddPickuper = () => {
           onChange={productivityChangeHandler}
           value={pickuperProductivity}
         />
+        <p>%</p>
 
         <Button type="submit" className={classes.button}>
           Add pickuper

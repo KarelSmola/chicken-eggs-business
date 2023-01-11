@@ -4,7 +4,7 @@ import classes from "./CartItem.module.css";
 
 const CartItem = (props) => {
   return (
-    <li key={props.key} className={classes.item}>
+    <div key={props.key} className={classes.item}>
       <div className={classes.type}>{props.type}</div>
       <div className={classes.description}>{props.description}</div>
       <div className={classes["eggs-per-day"]}>{props.eggsPerDay}</div>
@@ -18,7 +18,7 @@ const CartItem = (props) => {
           +
         </button>
       </div>
-    </li>
+    </div>
   );
 };
 

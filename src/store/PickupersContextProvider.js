@@ -5,7 +5,7 @@ const PickupersContextProvider = (props) => {
   const [pickupers, setPickupers] = useState([]);
 
   const addPickuper = (pickuper) => {
-    if (pickupers.length === 3) {
+    if (pickupers.length === 4) {
       return;
     }
 
@@ -19,10 +19,17 @@ const PickupersContextProvider = (props) => {
     ]);
   };
 
+  const removePickuper = (pickuperId) => {
+    setPickupers((prevPickupers) =>
+      prevPickupers.filter((pickuper) => pickuper.id !== pickuperId)
+    );
+  };
+
   const initial = {
     pickupers: pickupers,
     addPickuper: addPickuper,
-    productiveDays: 30,
+    removePickuper: removePickuper,
+    productiveDays: 20,
   };
 
   return (

@@ -85,11 +85,33 @@ const ChickensCartContextProvider = (props) => {
     dispatchChicken({ type: "REMOVE", chickenId: chickenId });
   };
 
+  const theoryEggsPerDaySum = cartState.chickensInCart.reduce(
+    (acc, curr) => acc + curr.eggsPerDay,
+    0
+  );
+
+  const totalChickensAmunt = cartState.chickensInCart.reduce(
+    (acc, curr) => acc + curr.amount,
+    0
+  );
+
+  const chickensWithoutWhiteChicken = cartState.chickensInCart.filter(
+    (chicken) => chicken.eggsPerDay !== 0
+  );
+
+  const theoryDayRevenue = chickensWithoutWhiteChicken.reduce((acc, curr) => {
+    const oneChickenRevenue = curr.amount * curr.eggsPerDay * curr.eggRetailPrice;
+    return acc + oneChickenRevenue;
+  }, 0);
+
   const initial = {
     totalChickensPrice: cartState.totalChickensPrice,
     chickensInCart: cartState.chickensInCart,
     addChicken: addChickenToCart,
     removeChicken: removeChickenFromCart,
+    theoryEggsPerDaySum: theoryEggsPerDaySum,
+    totalChickensAmunt,
+    theoryDayRevenue: theoryDayRevenue.toFixed(2),
   };
 
   return (
