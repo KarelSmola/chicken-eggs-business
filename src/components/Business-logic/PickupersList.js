@@ -12,12 +12,13 @@ const PickupersList = (props) => {
       {props.pickupers.map((pickuper) => (
         <li key={pickuper.id} className={classes.pickuper}>
           <Pickuper
+            id={pickuper.id}
             name={pickuper.name}
             pickuperProductivity={pickuper.productivity}
-            theoryTotalEggsMonth={props.theoryTotalEggsMonth}
-            realTotalEggsMonth={props.realTotalEggsMonth}
           />
-          <button onClick={props.calcPickuperData.bind(this, pickuper.id)}>
+          <button
+            onClick={pickuperCtx.calcPickuperData.bind(this, pickuper.id)}
+          >
             Calculate
           </button>
           <button onClick={pickuperCtx.removePickuper.bind(this, pickuper.id)}>

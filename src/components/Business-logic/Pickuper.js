@@ -1,17 +1,13 @@
-import React, { Fragment, useContext } from "react";
-import ChickenCartContext from "../../store/chicken-cart";
-import PickuperContext from "../../store/pickuper-ctx";
+import React, { Fragment } from "react";
 
 import classes from "./Pickuper.module.css";
 
 const Pickuper = (props) => {
-  const chickenCtx = useContext(ChickenCartContext);
-  const pickuperCtx = useContext(PickuperContext);
-
   return (
     <Fragment>
-      <p>Pickuper {props.name}</p>
-      <p>{props.pickuperProductivity} %</p>
+      <p className={classes.title}>Pickuper {props.name}</p>
+      <p className={classes.title}>{props.id}</p>
+      <p className={classes.title}>{props.pickuperProductivity} %</p>
     </Fragment>
   );
 };
