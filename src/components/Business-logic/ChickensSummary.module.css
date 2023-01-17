@@ -1,9 +1,0 @@
-.summary {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 2rem;
-  background-color: #f59f00;
-  border-radius: 2rem;
-  /* width: 50vw; */
-}

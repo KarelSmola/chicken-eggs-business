@@ -2,11 +2,10 @@ import React from "react";
 
 const PickuperContext = React.createContext({
   pickupers: [],
-  productiveDays: "",
   addPickuper: (pickuper) => {},
-  nameChangeHandler: (name) => {},
-  productivityChangeHandler: (number) => {},
-  pickuperName: "",
+  removePickuper: (id) => {},
+  productiveDays: "",
+  calcPickuperData: () => {},
 });
 
 export default PickuperContext;

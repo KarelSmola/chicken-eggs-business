@@ -100,7 +100,8 @@ const ChickensCartContextProvider = (props) => {
   );
 
   const theoryDayRevenue = chickensWithoutWhiteChicken.reduce((acc, curr) => {
-    const oneChickenRevenue = curr.amount * curr.eggsPerDay * curr.eggRetailPrice;
+    const oneChickenRevenue =
+      curr.amount * curr.eggsPerDay * curr.eggRetailPrice;
     return acc + oneChickenRevenue;
   }, 0);
 

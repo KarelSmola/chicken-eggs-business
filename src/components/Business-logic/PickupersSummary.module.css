@@ -6,13 +6,32 @@
   padding: 2rem;
   background-color: #f59f00;
   border-radius: 2rem;
-  height: 100%;
   font-size: 1.6rem;
+  width: 70%;
 }
 
-
+.container li {
+  width: 20rem;
+  text-align: center;
+}
 
 .pickupers {
   display: flex;
   gap: 2rem;
+}
+
+.pickupers-title {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  width: 100%;
+  font-weight: 600;
+}
+
+.grey-title {
+  color: grey;
+}
+
+.black-title {
+  color: #000;
 }

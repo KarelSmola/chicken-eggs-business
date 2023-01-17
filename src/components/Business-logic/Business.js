@@ -1,20 +1,19 @@
 import React, { Fragment } from "react";
-import ChickensSummary from "./ChickensSummary";
 import BusinessHeader from "./BusinessHeader";
+import PickupersSummary from "./PickupersSummary";
+import BusinessChickensList from "./BusinessChickensList";
 
 import classes from "./Business.module.css";
-import PickupersSummary from "./PickupersSummary";
-import BusinessSummary from "./BusinessSummary";
 
 const Business = () => {
   return (
     <Fragment>
       <BusinessHeader />
       <main className={classes["main-container"]}>
-        <ChickensSummary />
+        <BusinessChickensList />
+
         <PickupersSummary />
       </main>
-      <BusinessSummary />
     </Fragment>
   );
 };
