@@ -40,7 +40,7 @@ import classes from "./Cart.module.css";
 const Cart = (props) => {
   const chickenCtx = useContext(ChickenCartContext);
 
-  const totalPrice = `$${chickenCtx.totalChickensPrice.toFixed(2)}`;
+  const totalPrice = `$${chickenCtx.totalChickensPrice}`;
 
   const hasChickens = chickenCtx.chickensInCart.length > 0;
 
@@ -64,7 +64,6 @@ const Cart = (props) => {
           {chickenCtx.chickensInCart.map((item) => (
             <li key={item.id}>
               <CartItem
-                
                 type={item.type}
                 description={item.description}
                 eggsPerDay={item.eggsPerDay}

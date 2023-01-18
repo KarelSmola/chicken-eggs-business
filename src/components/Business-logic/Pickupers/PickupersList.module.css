@@ -1,0 +1,48 @@
+.pickuper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: #ffd43b;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  width: 20rem;
+}
+
+.pickupers-list {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  gap: 1rem;
+}
+
+.grey-title {
+  color: grey;
+}
+
+.black-title {
+  color: #000;
+}
+
+.trash {
+  border: 1px solid transparent;
+  background-color: transparent;
+}
+
+.trash svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 35px;
+  background-color: #fff;
+  color: red;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  stroke-width: 0.15rem;
+}
+
+.trash svg:hover {
+  cursor: pointer;
+  transform: scale(105%);
+}

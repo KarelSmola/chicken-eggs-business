@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
   padding: 2rem;
   background-color: #f59f00;
@@ -46,4 +46,35 @@
 
 .button:hover {
   color: #fab005;
+}
+
+.plus {
+  border: 1px solid transparent;
+  background-color: transparent;
+}
+
+.plus:focus {
+  outline: none;
+}
+
+.plus:focus svg {
+  border: 2px solid red;
+}
+
+.plus svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 40px;
+  background-color: #fff;
+  color: #f59f00;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  stroke-width: 0.3rem;
+}
+
+.plus svg:hover {
+  cursor: pointer;
+  transform: scale(110%);
 }

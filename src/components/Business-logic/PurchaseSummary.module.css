@@ -16,6 +16,16 @@
   font-size: 1.5rem;
 }
 
+.eggs {
+  width: 30px;
+  height: 30px;
+}
+
+.chickenIcon {
+  width: 30px;
+  height: 30px;
+}
+
 .title,
 .chicken,
 .totals {
@@ -35,4 +45,9 @@
 
 .title {
   align-items: flex-end;
+}
+
+.header-purchase-summary {
+  font-size: 1.6rem;
+  text-align: center;
 }

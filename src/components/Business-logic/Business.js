@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import BusinessHeader from "./BusinessHeader";
-import PickupersSummary from "./PickupersSummary";
-import BusinessChickensList from "./BusinessChickensList";
+import PickupersSummary from "./Pickupers/PickupersSummary";
+import PurchaseSummary from "./PurchaseSummary";
 
 import classes from "./Business.module.css";
 
@@ -10,8 +10,7 @@ const Business = () => {
     <Fragment>
       <BusinessHeader />
       <main className={classes["main-container"]}>
-        <BusinessChickensList />
-
+        <PurchaseSummary />
         <PickupersSummary />
       </main>
     </Fragment>

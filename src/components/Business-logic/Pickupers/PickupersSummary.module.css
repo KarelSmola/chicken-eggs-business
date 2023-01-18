@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
   padding: 2rem;
   background-color: #f59f00;
@@ -10,9 +10,28 @@
   width: 70%;
 }
 
-.container li {
-  width: 20rem;
+.data-container {
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  width: 100%;
   text-align: center;
+}
+
+.calc-message {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.calc-message,
+.calc-btn {
+  align-self: center;
+}
+
+.pickuper {
+  width: 20rem;
 }
 
 .pickupers {

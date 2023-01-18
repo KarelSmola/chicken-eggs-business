@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
-import Button from "../UI/Button";
-import PickuperContext from "../../store/pickuper-ctx";
+import PickuperContext from "../../../store/pickuper-ctx";
+
+import PlusIcon from "../../UI/Icons/PlusIcon";
 import classes from "./AddPickuper.module.css";
 
 const AddPickuper = (props) => {
@@ -51,9 +52,9 @@ const AddPickuper = (props) => {
           />
           <p>%</p>
 
-          <Button type="submit" className={classes.button}>
-            Add pickuper
-          </Button>
+          <button type="submit" className={classes.plus}>
+            <PlusIcon />
+          </button>
         </form>
       </div>
     </div>

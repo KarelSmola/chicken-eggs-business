@@ -6,6 +6,17 @@ const PickuperContext = React.createContext({
   removePickuper: (id) => {},
   productiveDays: "",
   calcPickuperData: () => {},
+  theoryEggsPerMonth: "",
+  // realEggsPerDaySum: "",
+  // realEggsPerMonthSum: "",
+  theoryMonthRevenue: "",
+  // realDayRevenueSum: "",
+  // realMonthRevenueSum: "",
+  calcROI: () => {},
+  calcData: [],
+  calcFinalData: false,
+  finalData: {},
+  calcMessage: "",
 });
 
 export default PickuperContext;

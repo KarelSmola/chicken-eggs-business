@@ -7,12 +7,19 @@
 }
 
 .data-list {
-  display: flex;
-  gap: 1rem;
   list-style-type: none;
+  display: flex;
   width: 100%;
+  gap: 1rem;
 }
 
-.data-list li {
+.pickuper-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: #ffd43b;
+  padding: 1rem;
+  border-radius: 1rem;
   width: 20rem;
 }
