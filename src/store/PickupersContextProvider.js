@@ -74,16 +74,16 @@ const PickupersContextProvider = (props) => {
   );
 
   const realMonthRevenueSum = pickupersData.reduce(
-    (acc, curr) => +(acc + curr.realMonthRevenue).toFixed(2),
+    (acc, curr) => +(acc + curr.realMonthRevenue).toFixed(1),
     0
   );
   const realEggsPerDaySum = pickupersData.reduce(
-    (acc, curr) => acc + curr.realEggsPerDay,
+    (acc, curr) => +(acc + curr.realEggsPerDay).toFixed(1),
     0
   );
 
   const realEggsPerMonthSum = pickupersData.reduce(
-    (acc, curr) => acc + curr.realEggsPerMonth,
+    (acc, curr) => +(acc + curr.realEggsPerMonth).toFixed(1),
     0
   );
 
@@ -107,11 +107,7 @@ const PickupersContextProvider = (props) => {
     removePickuper,
     productiveDays,
     theoryEggsPerMonth,
-    // realEggsPerDaySum,
-    // realEggsPerMonthSum,
     theoryMonthRevenue,
-    // realDayRevenueSum,
-    // realMonthRevenueSum,
     calcROI,
     calcData,
     calcFinalData,

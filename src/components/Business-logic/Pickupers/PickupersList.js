@@ -27,21 +27,29 @@ const PickupersList = (props) => {
 
   return (
     <Fragment>
-      <ul className={classes["pickupers-list"]}>
-        <li className={`${classes.pickuper} ${titlePickuper1ClassName}`}>
+      <ul className={classes["pickupers-column-title"]}>
+        <li
+          className={`${classes["pickuper-title"]} ${titlePickuper1ClassName}`}
+        >
           Pickuper 1
         </li>
-        <li className={`${classes.pickuper} ${titlePickuper2ClassName}`}>
+        <li
+          className={`${classes["pickuper-title"]} ${titlePickuper2ClassName}`}
+        >
           Pickuper 2
         </li>
-        <li className={`${classes.pickuper} ${titlePickuper3ClassName}`}>
+        <li
+          className={`${classes["pickuper-title"]} ${titlePickuper3ClassName}`}
+        >
           Pickuper 3
         </li>
-        <li className={`${classes.pickuper} ${titlePickuper4ClassName}`}>
+        <li
+          className={`${classes["pickuper-title"]} ${titlePickuper4ClassName}`}
+        >
           Pickuper 4
         </li>
       </ul>
-      <ul className={classes["pickupers-list"]}>
+      <ul className={classes.pickupers}>
         {props.pickupers.map((pickuper) => (
           <li key={pickuper.id} className={classes.pickuper}>
             <Pickuper
@@ -49,13 +57,6 @@ const PickupersList = (props) => {
               name={pickuper.name}
               pickuperProductivity={pickuper.productivity}
             />
-
-            <button
-              onClick={pickuperCtx.removePickuper.bind(this, pickuper.id)}
-              className={classes.trash}
-            >
-              <TrashIcon />
-            </button>
           </li>
         ))}
       </ul>

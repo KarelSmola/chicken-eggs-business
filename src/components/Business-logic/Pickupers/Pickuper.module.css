@@ -1,4 +1,37 @@
-.title {
-  font-weight: 600;
-  font-size: 1.4rem;
+.pickuper {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+  width: 100%;
+}
+
+.about-pickuper {
+  display: inherit;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.trash {
+  border: 1px solid transparent;
+  background-color: transparent;
+}
+
+.trash svg {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  width: 35px;
+  height: 35px;
+  background-color: #fff;
+  color: red;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  stroke-width: 0.15rem;
+}
+
+.trash svg:hover {
+  cursor: pointer;
+  transform: scale(105%);
 }

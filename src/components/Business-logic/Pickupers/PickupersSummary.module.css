@@ -1,20 +1,63 @@
-.container {
-  display: flex;
+.summary {
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(3, auto) auto auto;
+  justify-items: center;
   gap: 1rem;
   padding: 2rem;
   background-color: #f59f00;
   border-radius: 2rem;
   font-size: 1.6rem;
-  width: 70%;
+}
+
+.title {
+  grid-column: 1 / -1;
+}
+
+.pickupers-team-row-title {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.pickupers-row-title {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  font-weight: 600;
+}
+
+.data-row-title {
+  grid-column: 1 / 2;
+  grid-row: 5 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-weight: 600;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
 }
 
 .data-container {
+  grid-column: 2 / -1;
   height: 30rem;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: space-between;
   width: 100%;
   text-align: center;
