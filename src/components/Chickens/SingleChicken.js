@@ -19,7 +19,7 @@ const SingleChicken = (props) => {
       type: props.type,
       description: props.description,
       price: props.price,
-      eggsPerDay: props.eggsPerDay,
+      eggsPerDay: props.eggsPerDay * numberChickensAmount,
       eggRetailPrice: props.eggRetailPrice,
       amount: numberChickensAmount,
     });
@@ -29,12 +29,12 @@ const SingleChicken = (props) => {
 
   return (
     <div className={classes.chicken}>
-      <div className={classes.text}>{props.type}</div>
-      <div className={classes.text}>{props.description}</div>
-      <div>{props.eggsPerDay}</div>
-      <div>{props.price}</div>
+      <p className={classes.text}>{props.type}</p>
+      <p className={classes.text}>{props.description}</p>
+      <p>{props.eggsPerDay}</p>
+      <p>$ {props.price.toFixed(2)}</p>
       <form onSubmit={submitHandler} className={classes["amount-form"]}>
-        <label>Amount</label>
+        <label></label>
         <input
           ref={chickenInputRef}
           className={classes.input}
@@ -43,7 +43,7 @@ const SingleChicken = (props) => {
           step={1}
           defaultValue={1}
         />
-        <Button className={classes.button}>Add</Button>
+        <Button className={classes["add-btn"]}>Add</Button>
       </form>
     </div>
   );

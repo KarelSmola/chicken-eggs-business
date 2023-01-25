@@ -5,7 +5,7 @@
   align-items: center;
   gap: 1rem;
   padding: 2rem;
-  background-color: #f59f00;
+  /* background-color: #f59f00; */
   border-radius: 2rem;
   height: 100%;
   font-size: 1.6rem;
@@ -41,14 +41,6 @@
   border-bottom: 2px solid red;
 }
 
-.button {
-  background-color: #fff;
-}
-
-.button:hover {
-  color: #fab005;
-}
-
 .plus {
   border: 1px solid transparent;
   background-color: transparent;
@@ -68,7 +60,7 @@
   align-items: center;
   width: 60px;
   height: 40px;
-  background-color: #fff;
+  background-color: #ffd43b;
   color: #f59f00;
   border-radius: 1rem;
   padding: 0.5rem;

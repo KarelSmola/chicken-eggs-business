@@ -23,11 +23,15 @@ function App() {
     setCartIsVisible(false);
   };
 
+  const backToOrder = () => {
+    setBusinessPageIsVisible(false);
+  };
+
   return (
     <ChickensCartContextProvider>
       <PickupersContextProvider>
         {businessPageIsVisible ? (
-          <Business />
+          <Business onBackToOrder={backToOrder} />
         ) : (
           <Fragment>
             {cartIsVisible && (

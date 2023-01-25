@@ -6,32 +6,32 @@ import SingleChicken from "./SingleChicken";
 const CHICKENS = [
   {
     id: "ch-01",
-    type: "Brown Chicken",
-    description: "The best chicken",
-    eggsPerDay: 2,
+    type: "Rhode Island Red",
+    description: "The most popular in US",
+    eggsPerDay: 1,
     price: 10,
     eggRetailPrice: 0.5,
   },
   {
     id: "ch-02",
-    type: "Yellow Chicken",
-    description: "Good chicken",
-    eggsPerDay: 3,
+    type: "Plymouth Rock",
+    description: "Relaxed, resplendent and responsive",
+    eggsPerDay: 1,
     price: 5,
     eggRetailPrice: 0.3,
   },
   {
     id: "ch-03",
-    type: "Black Chicken",
-    description: "Still good",
-    eggsPerDay: 5,
+    type: "The Australorp",
+    description: "Holds the record for the most eggs ever",
+    eggsPerDay: 2,
     price: 3,
     eggRetailPrice: 0.2,
   },
   {
     id: "ch-04",
-    type: "White Chicken",
-    description: "Chicken Guardian",
+    type: "Orpington",
+    description: "UK Chicken Guardian",
     eggsPerDay: 0,
     price: 20,
     eggRetailPrice: 0,
@@ -41,6 +41,13 @@ const CHICKENS = [
 const AvailableChickens = () => {
   return (
     <section className={classes.chickens}>
+      <div className={classes["chickens-columns-title"]}>
+        <p className={classes.type}>Type</p>
+        <p className={classes.description}>Description</p>
+        <p className={classes.eggs}>Eggs per day</p>
+        <p className={classes.price}>Price</p>
+        <p className={classes.add}>Add to cart</p>
+      </div>
       <ul className={classes["chickens-list"]}>
         {CHICKENS.map((chicken) => (
           <li key={chicken.id}>

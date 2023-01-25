@@ -1,14 +1,13 @@
 .chicken {
-  height: 5rem;
-  border-radius: 1rem;
-  background-color: #ffd43b;
   display: grid;
   grid-template-columns: 2fr 3fr 1fr 1fr 2fr;
   align-items: center;
   justify-items: center;
   align-content: center;
   padding: 1rem 2rem;
-  font-size: 2rem;
+  border-radius: 1rem;
+  background-color: #ffd43b;
+  font-size: 1.6rem;
 }
 
 .amount-form {
@@ -22,15 +21,38 @@
 }
 
 .input {
-  width: 5rem;
+  width: 8rem;
   border: none;
-  padding: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: 2px solid transparent;
 }
 
-.button {
+.input:focus {
+  outline-style: none;
+  border: 2px solid #f08c00;
+}
+
+.add-btn {
   background-color: #f08c00;
+  transition: all 0.2s;
 }
 
-.button:hover {
+.add-btn:hover {
+  cursor: pointer;
   background-color: #fab005;
+  transform: translateY(-0.3rem);
+}
+
+.add-btn:active {
+  transform: translateY(0.1rem);
+}
+
+.add-btn:focus {
+  background-color: #fab005;
+  outline: none;
+}
+
+.add-btn:hover {
+  background-color: #f08c00;
 }

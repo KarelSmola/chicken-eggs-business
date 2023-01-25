@@ -1,5 +1,6 @@
 import React from "react";
-
+import PlusIcon from "../UI/Icons/PlusIcon";
+import MinusIcon from "../UI/Icons/MinusIcon";
 import classes from "./CartItem.module.css";
 
 const CartItem = (props) => {
@@ -11,11 +12,11 @@ const CartItem = (props) => {
       <div className={classes.price}>{`$ ${props.price.toFixed(2)}`}</div>
       <div className={classes.amount}>{props.amount}x</div>
       <div className={classes.buttons}>
-        <button className={classes.btn} onClick={props.onRemove}>
-          -
+        <button className={classes.plus} onClick={props.onRemove}>
+          <MinusIcon />
         </button>
-        <button className={classes.btn} onClick={props.onAdd}>
-          +
+        <button className={classes.plus} onClick={props.onAdd}>
+          <PlusIcon />
         </button>
       </div>
     </div>

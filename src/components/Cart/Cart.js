@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import CartItem from "./CartItem";
 import Modal from "../UI/Modal";
 import ChickenCartContext from "../../store/chicken-cart";
@@ -6,41 +6,11 @@ import Button from "../UI/Button";
 
 import classes from "./Cart.module.css";
 
-// const DUMMY_CHICKENS = [
-//   {
-//     id: "ch-01",
-//     type: "Brown Chicken",
-//     description: "The best chicken",
-//     eggsPerDay: 5,
-//     price: 10,
-//   },
-//   {
-//     id: "ch-02",
-//     type: "Yellow Chicken",
-//     description: "Good chicken",
-//     eggsPerDay: 3,
-//     price: 5,
-//   },
-//   {
-//     id: "ch-03",
-//     type: "Black Chicken",
-//     description: "Still good",
-//     eggsPerDay: 1,
-//     price: 3,
-//   },
-//   {
-//     id: "ch-04",
-//     type: "White Chicken",
-//     description: "Chicken Guardian",
-//     eggsPerDay: 0,
-//     price: 20,
-//   },
-// ];
-
 const Cart = (props) => {
   const chickenCtx = useContext(ChickenCartContext);
+  const [orpingtonError, setOrpingtonError] = useState(false);
 
-  const totalPrice = `$${chickenCtx.totalChickensPrice}`;
+  const totalPrice = `$ ${chickenCtx.totalChickensPrice}`;
 
   const hasChickens = chickenCtx.chickensInCart.length > 0;
 
@@ -52,9 +22,58 @@ const Cart = (props) => {
     chickenCtx.removeChicken(chickenId);
   };
 
+  const chickensWithoutOrpington = chickenCtx.chickensInCart.filter(
+    (chicken) => chicken.type !== "Orpington"
+  );
+
+  const chickensWithoutOrpingtonAmount = chickensWithoutOrpington.reduce(
+    (acc, curr) => acc + curr.amount,
+    0
+  );
+
+  const orpingtons = chickenCtx.chickensInCart.filter(
+    (chicken) => chicken.type === "Orpington"
+  );
+
+  const orpingtonAmount = orpingtons.reduce(
+    (acc, curr) => acc + curr.amount,
+    0
+  );
+
+  const chickensOrpingtonRatio =
+    chickensWithoutOrpingtonAmount / orpingtonAmount;
+
+  const oneOrpingtonToHowManyChickens = 3.1;
+
+  let anotherOrpington;
+
+  anotherOrpington = Math.floor(
+    chickensOrpingtonRatio / oneOrpingtonToHowManyChickens
+  );
+
+  if (anotherOrpington === Infinity) {
+    anotherOrpington = 1;
+  }
+
+  const inValidOrpingtonsAmount = chickensOrpingtonRatio > 3;
+  const orpingtonOrpingtons = anotherOrpington & 1 ? "Orpington" : "Orpingtons";
+  const errorMessage = `You have to order at least ${anotherOrpington} more ${orpingtonOrpingtons}`;
+  const okMessage = `OK You can order your chickens`;
+
+  const message = inValidOrpingtonsAmount ? errorMessage : okMessage;
+
   const orderChickens = () => {
+    if (inValidOrpingtonsAmount) {
+      setOrpingtonError(true);
+      return;
+    }
+
     props.onOrder();
   };
+
+  const errorClasses = inValidOrpingtonsAmount
+    ? `${classes.message} ${classes.error}`
+    : `${classes.message}`;
 
   return (
     <Modal onClose={props.onClose}>
@@ -75,6 +94,9 @@ const Cart = (props) => {
             </li>
           ))}
         </ul>
+        {orpingtonError && (
+          <p className={`${classes.message} ${errorClasses}`}>{message}</p>
+        )}
         <div className={classes["items-summary"]}>
           <h3 className={classes.price}>Total price {totalPrice}</h3>
           <div className={classes.buttons}>

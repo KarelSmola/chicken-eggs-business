@@ -10,22 +10,21 @@ const PurchaseSummary = () => {
 
   return (
     <div className={classes.container}>
-      <h2>Purchase summary</h2>
-      <ul className={classes["chickens-list"]}>
-        <div className={classes.title}>
-          <p className={classes.type}>Type</p>
-          <p className={classes.amount}>Amount</p>
+      <h2 className={classes.header}>Purchase summary</h2>
+      <ul className={classes.title}>
+        <p className={classes.type}>Type</p>
+        <p className={classes.amount}>Amount</p>
 
-          <p className={classes.price}>Price</p>
-          <p className={classes["eggs-per-day"]}>Eggs / day</p>
-          <p className={classes.rrp}>Retail price / egg</p>
-        </div>
+        <p className={classes.price}>Price</p>
+        <p className={classes["eggs-per-day"]}>Eggs / day</p>
+        <p className={classes.rrp}>Retail price / egg</p>
+      </ul>
+      <ul className={classes["chickens-list"]}>
         {chickenCtx.chickensInCart.map((chicken) => (
           <li key={chicken.id} className={classes.chicken}>
             <p className={classes.type}>{chicken.type}</p>
             <p className={classes.amount}>{chicken.amount}x</p>
-            {/* <p className={classes.price}>$ {chicken.price.toFixed(2)}</p> */}
-            <p className={classes.price}>$ {chicken.price}</p>
+            <p className={classes.price}>$ {chicken.price.toFixed(2)}</p>
             <p className={classes["eggs-per-day"]}>{chicken.eggsPerDay}</p>
             <p className={classes.rrp}>$ {chicken.eggRetailPrice.toFixed(2)}</p>
           </li>
@@ -35,20 +34,35 @@ const PurchaseSummary = () => {
           <p>{chickenCtx.totalChickensAmunt}x</p>
           <p>$ {chickenCtx.totalChickensPrice}</p>
           <p>{chickenCtx.theoryEggsPerDaySum}</p>
-          <p>$ {chickenCtx.theoryDayRevenueSum}</p>
+          <p>$ {chickenCtx.theoryDayRevenueSum.toFixed(2)}</p>
         </div>
       </ul>
-      <div className={classes["header-purchase-summary"]}>
-        <p>You bought 4 chickens.</p>
+      <div className={classes["summary-text"]}>
         <p>
-          They can give you up to {pickuperCtx.theoryEggsPerMonth} eggs per
-          month and you can earn in $ {pickuperCtx.theoryMonthRevenue}.
+          You bought{" "}
+          <span className={classes.bold}>
+            {chickenCtx.totalChickensAmunt} chickens.
+          </span>
+        </p>
+        <p>
+          They can give you up to{" "}
+          <span className={classes.bold}>
+            {pickuperCtx.theoryEggsPerMonth} eggs per month{" "}
+          </span>{" "}
+          and you can{" "}
+          <span className={classes.bold}>
+            earn up to $ {pickuperCtx.theoryMonthRevenue}.
+          </span>
         </p>
         <p>
           But these numbers are just theory numbers. You (or your pickupers)
           will unfortunatelly brake some eggs.
         </p>
-        <p>So let's go to set up your pickupers team.</p>
+        <p>
+          <span className={classes.bold}>
+            So let's go to set up your pickupers team.
+          </span>
+        </p>
       </div>
     </div>
   );

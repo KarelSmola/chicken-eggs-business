@@ -15,7 +15,6 @@ const PickupersSummary = () => {
 
   return (
     <div className={classes.summary}>
-      <h2 className={classes.title}>Pickupers</h2>
       <AddPickuper />
 
       <div className={classes["pickupers-team-row-title"]}>
@@ -30,7 +29,7 @@ const PickupersSummary = () => {
         chickens={chickenCtx.chickensInCart}
       />
 
-      <div className={classes["data-row-title"]}>
+      <div className={classes["pickupers-data-row-title"]}>
         <p>Real eggs per day</p>
         <p>Real eggs per month</p>
         <p>Real revenue per day</p>
@@ -38,20 +37,25 @@ const PickupersSummary = () => {
       </div>
       <div className={classes["data-container"]}>
         <PickuperData />
-        {pickuperCtx.calcMessage && pickuperCtx.pickupers.length > 0 ? (
-          <p className={classes["calc-message"]}>
-            Click Calculate button to calculate or recalculate data
-          </p>
-        ) : (
-          ""
-        )}
-        {pickuperCtx.calcFinalData && <FinalData />}
-        {pickuperCtx.pickupers.length > 0 && (
-          <Button onClick={pickuperCtx.calcROI} className={classes["calc-btn"]}>
-            Calculate
-          </Button>
-        )}
       </div>
+      {pickuperCtx.calcMessage && pickuperCtx.pickupers.length > 0 ? (
+        <p className={classes["calc-message"]}>
+          Click Calculate button to calculate or recalculate data
+        </p>
+      ) : (
+        ""
+      )}
+      <div className={classes["final-data-row-title"]}>
+        <p>Final data</p>
+      </div>
+      <div className={classes["final-data"]}>
+        {pickuperCtx.calcFinalData && <FinalData />}
+      </div>
+      {pickuperCtx.pickupers.length > 0 && (
+        <Button onClick={pickuperCtx.calcROI} className={classes["calc-btn"]}>
+          Calculate
+        </Button>
+      )}
     </div>
   );
 };

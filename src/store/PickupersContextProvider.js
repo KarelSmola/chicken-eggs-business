@@ -74,7 +74,7 @@ const PickupersContextProvider = (props) => {
   );
 
   const realMonthRevenueSum = pickupersData.reduce(
-    (acc, curr) => +(acc + curr.realMonthRevenue).toFixed(1),
+    (acc, curr) => +(acc + curr.realMonthRevenue).toFixed(2),
     0
   );
   const realEggsPerDaySum = pickupersData.reduce(

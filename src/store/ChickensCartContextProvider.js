@@ -43,7 +43,7 @@ const chickenCartReducer = (state, action) => {
     );
     const existingChicken = state.chickensInCart[existingChickenIndex];
 
-    const updatedTotalChickensPrice = (
+    const updatedTotalChickensPrice = +(
       state.totalChickensPrice - existingChicken.price
     ).toFixed(2);
 
@@ -86,6 +86,13 @@ const ChickensCartContextProvider = (props) => {
     dispatchChicken({ type: "REMOVE", chickenId: chickenId });
   };
 
+  const chickenTheoryEggsPerDay = cartState.chickensInCart.reduce(
+    (acc, curr) => acc + curr.amount * curr.eggsPerDay,
+    0
+  );
+  console.log(cartState.chickensInCart);
+  console.log(chickenTheoryEggsPerDay);
+
   const theoryEggsPerDaySum = cartState.chickensInCart.reduce(
     (acc, curr) => acc + curr.eggsPerDay,
     0
@@ -103,7 +110,7 @@ const ChickensCartContextProvider = (props) => {
   const theoryDayRevenueSum = chickensWithoutWhiteChicken.reduce(
     (acc, curr) => {
       const oneChickenRevenue =
-        curr.amount * curr.eggsPerDay * curr.eggRetailPrice;
+        +curr.amount * +curr.eggsPerDay * +curr.eggRetailPrice;
       return acc + oneChickenRevenue;
     },
     0
@@ -114,9 +121,9 @@ const ChickensCartContextProvider = (props) => {
     chickensInCart: cartState.chickensInCart,
     addChicken: addChickenToCart,
     removeChicken: removeChickenFromCart,
-    theoryEggsPerDaySum: theoryEggsPerDaySum,
+    theoryEggsPerDaySum,
     totalChickensAmunt,
-    theoryDayRevenueSum: theoryDayRevenueSum.toFixed(2),
+    theoryDayRevenueSum,
   };
 
   return (

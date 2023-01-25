@@ -1,11 +1,8 @@
 .summary {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-rows: repeat(3, auto) auto auto;
-  justify-items: center;
+  grid-template-rows: repeat(4, auto) 25rem;
+  /* justify-items: center; */
   gap: 1rem;
   padding: 2rem;
   background-color: #f59f00;
@@ -19,7 +16,7 @@
 
 .pickupers-team-row-title {
   grid-column: 1 / 2;
-  grid-row: 3 / 4;
+  grid-row: 2 / 3;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -30,37 +27,53 @@
 
 .pickupers-row-title {
   grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  font-weight: 600;
+}
+
+.pickupers-data-row-title {
+  grid-column: 1 / 2;
   grid-row: 4 / 5;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 1rem;
-  padding: 1rem;
-  width: 100%;
-  font-weight: 600;
-}
-
-.data-row-title {
-  grid-column: 1 / 2;
-  grid-row: 5 / -1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  justify-content: space-between;
   font-weight: 600;
   gap: 1rem;
   padding: 1rem;
   width: 100%;
+  height: 13rem;
 }
 
 .data-container {
   grid-column: 2 / -1;
-  height: 30rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
+  gap: 1rem;
   width: 100%;
-  text-align: center;
+}
+
+.final-data-row-title {
+  grid-column: 1 / 2;
+  grid-row: 5 / 6;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 25rem;
+  font-weight: 600;
+}
+
+.final-data {
+  margin-left: -1rem;
 }
 
 .calc-message {
@@ -68,9 +81,17 @@
   font-weight: 700;
 }
 
-.calc-message,
+.calc-message {
+  grid-column: 2 / -1;
+  grid-row: 5 / 6;
+  align-self: start;
+  justify-self: center;
+}
+
 .calc-btn {
+  grid-column: 2 / -1;
   align-self: center;
+  background-color: #fff;
 }
 
 .pickuper {

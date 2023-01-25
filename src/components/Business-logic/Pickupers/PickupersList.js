@@ -23,8 +23,6 @@ const PickupersList = (props) => {
   const titlePickuper4ClassName =
     pickuperCtx.pickupers.length > 3 ? titleBlack : titleGrey;
 
-  console.log(pickuperCtx.pickupers.length);
-
   return (
     <Fragment>
       <ul className={classes["pickupers-column-title"]}>
