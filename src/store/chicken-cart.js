@@ -8,6 +8,7 @@ const ChickenCartContext = React.createContext({
   theoryEggsPerDaySum: "",
   totalChickensAmunt: "",
   theoryDayRevenueSum: "",
+  availableChickens: [],
 });
 
 export default ChickenCartContext;

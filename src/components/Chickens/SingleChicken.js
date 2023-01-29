@@ -1,6 +1,6 @@
 import React, { useContext, useRef } from "react";
-import Button from "../UI/Button";
 import ChickenCartContext from "../../store/chicken-cart";
+import PlusIcon from "../UI/Icons/PlusIcon";
 
 import classes from "./SingleChicken.module.css";
 
@@ -18,9 +18,10 @@ const SingleChicken = (props) => {
       id: props.id,
       type: props.type,
       description: props.description,
-      price: props.price,
+      price: props.price * numberChickensAmount,
       eggsPerDay: props.eggsPerDay * numberChickensAmount,
-      eggRetailPrice: props.eggRetailPrice,
+      eggRetailPrice:
+        props.eggRetailPrice * numberChickensAmount * props.eggsPerDay,
       amount: numberChickensAmount,
     });
 
@@ -43,7 +44,9 @@ const SingleChicken = (props) => {
           step={1}
           defaultValue={1}
         />
-        <Button className={classes["add-btn"]}>Add</Button>
+        <button className={classes.plus} onClick={props.onAdd}>
+          <PlusIcon />
+        </button>
       </form>
     </div>
   );

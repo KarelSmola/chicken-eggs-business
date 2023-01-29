@@ -47,9 +47,9 @@ const PurchaseSummary = () => {
         <p>
           They can give you up to{" "}
           <span className={classes.bold}>
-            {pickuperCtx.theoryEggsPerMonth} eggs per month{" "}
+            {pickuperCtx.theoryEggsPerMonth} eggs per month
           </span>{" "}
-          and you can{" "}
+          (30 days) and you can{" "}
           <span className={classes.bold}>
             earn up to $ {pickuperCtx.theoryMonthRevenue}.
           </span>

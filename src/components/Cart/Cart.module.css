@@ -12,6 +12,37 @@
   font-size: 1.6rem;
 }
 
+.chickens-columns-title {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  background-color: #ffec99;
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.type,
+.description {
+  justify-self: start;
+}
+
+.eggs,
+.price {
+  justify-self: center;
+  text-align: center;
+}
+
+.amount {
+  justify-self: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
 .items {
   display: flex;
   flex-direction: column;
@@ -25,13 +56,13 @@
   flex-direction: column;
   gap: 1rem;
   margin-top: 1rem;
-  background-color: #fff3bf;
+  background-color: #ffec99;
   align-self: end;
   padding: 1rem;
   border-radius: 1rem;
 }
 
-.price {
+.total-price {
   align-self: end;
 }
 

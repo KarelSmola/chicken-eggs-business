@@ -11,14 +11,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ffd43b;
+  background-color: #ffec99;
   padding: 1rem;
   border-radius: 1rem;
   width: 15rem;
 }
 
 .grey-title {
-  color: grey;
+  color: #bbb;
 }
 
 .black-title {
@@ -37,8 +37,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* gap: 1rem; */
-  background-color: #ffd43b;
+  background-color: #fff3bf;
   padding: 1rem;
   border-radius: 1rem;
   width: 15rem;

@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from "react";
+import React, { useContext } from "react";
 import PickupersList from "./PickupersList";
 import ChickenCartContext from "../../../store/chicken-cart";
 import AddPickuper from "./AddPickuper";
@@ -16,7 +16,6 @@ const PickupersSummary = () => {
   return (
     <div className={classes.summary}>
       <AddPickuper />
-
       <div className={classes["pickupers-team-row-title"]}>
         <p>Pickuper {pickuperCtx.pickupers.length} of 4</p>
       </div>
@@ -28,13 +27,15 @@ const PickupersSummary = () => {
         pickupers={pickuperCtx.pickupers}
         chickens={chickenCtx.chickensInCart}
       />
+      {pickuperCtx.calcFinalData && (
+        <div className={classes["pickupers-data-row-title"]}>
+          <p>Real eggs per day</p>
+          <p>Real eggs per month</p>
+          <p>Real revenue per day</p>
+          <p>Real revenue per month</p>
+        </div>
+      )}
 
-      <div className={classes["pickupers-data-row-title"]}>
-        <p>Real eggs per day</p>
-        <p>Real eggs per month</p>
-        <p>Real revenue per day</p>
-        <p>Real revenue per month</p>
-      </div>
       <div className={classes["data-container"]}>
         <PickuperData />
       </div>
@@ -45,14 +46,18 @@ const PickupersSummary = () => {
       ) : (
         ""
       )}
-      <div className={classes["final-data-row-title"]}>
-        <p>Final data</p>
-      </div>
+
+      {pickuperCtx.calcFinalData && (
+        <div className={classes["final-data-row-title"]}>
+          <p>Final data</p>
+        </div>
+      )}
+
       <div className={classes["final-data"]}>
         {pickuperCtx.calcFinalData && <FinalData />}
       </div>
       {pickuperCtx.pickupers.length > 0 && (
-        <Button onClick={pickuperCtx.calcROI} className={classes["calc-btn"]}>
+        <Button onClick={pickuperCtx.calcROI} className={classes.btn}>
           Calculate
         </Button>
       )}

@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import PickuperContext from "../../../store/pickuper-ctx";
-
 import PlusIcon from "../../UI/Icons/PlusIcon";
+
 import classes from "./AddPickuper.module.css";
 
-const AddPickuper = (props) => {
+const AddPickuper = () => {
   const pickuperCtx = useContext(PickuperContext);
   const [inputName, setInputName] = useState("");
   const [pickuperProductivity, setPickuperProductivity] = useState(100);
@@ -31,8 +31,8 @@ const AddPickuper = (props) => {
 
   return (
     <div className={classes.container}>
-      <div className={classes["pickupers-title"]}>
-        <form className={classes.form} onSubmit={submitHandler}>
+      <form className={classes.form} onSubmit={submitHandler}>
+        <div className={classes.name}>
           <label className={classes.label}>Pickuper Name</label>
           <input
             type="text"
@@ -40,7 +40,9 @@ const AddPickuper = (props) => {
             onChange={inputNameChangeHandler}
             value={inputName}
           />
-          <label>Productivity</label>
+        </div>
+        <div className={classes.productivity}>
+          <label className={classes.label}>Productivity</label>
           <input
             type="number"
             step={5}
@@ -51,12 +53,12 @@ const AddPickuper = (props) => {
             value={pickuperProductivity}
           />
           <p>%</p>
+        </div>
 
-          <button type="submit" className={classes.plus}>
-            <PlusIcon />
-          </button>
-        </form>
-      </div>
+        <button type="submit" className={classes.plus}>
+          <PlusIcon />
+        </button>
+      </form>
     </div>
   );
 };

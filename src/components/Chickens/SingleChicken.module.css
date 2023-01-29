@@ -1,12 +1,12 @@
 .chicken {
   display: grid;
-  grid-template-columns: 2fr 3fr 1fr 1fr 2fr;
+  grid-template-columns: repeat(5, 1fr);
   align-items: center;
   justify-items: center;
   align-content: center;
   padding: 1rem 2rem;
   border-radius: 1rem;
-  background-color: #ffd43b;
+  background-color: #fff3bf;
   font-size: 1.6rem;
 }
 
@@ -33,26 +33,34 @@
   border: 2px solid #f08c00;
 }
 
-.add-btn {
-  background-color: #f08c00;
-  transition: all 0.2s;
+.plus {
+  border: 1px solid transparent;
+  background-color: transparent;
 }
 
-.add-btn:hover {
-  cursor: pointer;
-  background-color: #fab005;
-  transform: translateY(-0.3rem);
-}
-
-.add-btn:active {
-  transform: translateY(0.1rem);
-}
-
-.add-btn:focus {
-  background-color: #fab005;
+.plus:focus {
   outline: none;
 }
 
-.add-btn:hover {
-  background-color: #f08c00;
+.plus:focus svg {
+  border: 2px solid red;
+}
+
+.plus svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 40px;
+  border: 2px solid #f59f00;
+  background-color: #ffe066;
+  color: #f59f00;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  stroke-width: 0.3rem;
+}
+
+.plus svg:hover {
+  cursor: pointer;
+  transform: scale(110%);
 }

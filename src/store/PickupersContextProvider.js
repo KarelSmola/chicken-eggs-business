@@ -9,7 +9,7 @@ const PickupersContextProvider = (props) => {
   const [calcFinalData, setCalcFinalData] = useState(false);
   const [calcMessage, setCalcMessage] = useState(false);
 
-  const productiveDays = 20;
+  const productiveDays = 30;
 
   const theoryEggsPerDay = chickenCtx.theoryEggsPerDaySum;
   const theoryEggsPerMonth = theoryEggsPerDay * productiveDays;

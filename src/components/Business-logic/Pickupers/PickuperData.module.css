@@ -1,5 +1,5 @@
 .pickupers-data {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,7 +20,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  background-color: #ffd43b;
+  background-color: #fff3bf;
   padding: 1rem;
   border-radius: 1rem;
   width: 15rem;

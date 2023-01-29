@@ -17,21 +17,27 @@
   background-color: transparent;
 }
 
+.trash:focus svg {
+  border: 2px solid red;
+}
+
 .trash svg {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-
-  width: 35px;
-  height: 35px;
-  background-color: #fff;
-  color: red;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #f59f00;
+  background-color: #ffe066;
+  color: #f59f00;
   border-radius: 1rem;
   padding: 0.5rem;
-  stroke-width: 0.15rem;
+  stroke-width: 0.3rem;
+  color: red;
+  transition: all 0.2s;
 }
 
 .trash svg:hover {
   cursor: pointer;
-  transform: scale(105%);
+  transform: scale(110%);
 }

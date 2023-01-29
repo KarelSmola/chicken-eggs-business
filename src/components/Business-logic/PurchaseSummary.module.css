@@ -8,7 +8,7 @@
 }
 
 .header {
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -19,7 +19,9 @@
   justify-items: center;
   font-size: 1.8rem;
   font-weight: 600;
-  padding: 0rem 1rem;
+  padding: 1rem 1rem;
+  border-radius: 1rem;
+  background-color: #ffec99;
 }
 
 .type,
@@ -42,7 +44,7 @@
   gap: 2rem;
   padding: 1rem;
   border-radius: 1rem;
-  background-color: #ffd43b;
+  background-color: #fff3bf;
 }
 
 .totals {
@@ -54,7 +56,7 @@
   border-radius: 1rem;
   font-size: 1.8rem;
   font-weight: 600;
-  background-color: #ffd43b;
+  background-color: #ffec99;
 }
 
 .summary-text {

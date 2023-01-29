@@ -2,7 +2,6 @@ import React, { Fragment, useContext } from "react";
 import Pickuper from "./Pickuper";
 import PickuperContext from "../../../store/pickuper-ctx";
 
-import TrashIcon from "../../UI/Icons/TrashIcon";
 import classes from "./PickupersList.module.css";
 
 const PickupersList = (props) => {
