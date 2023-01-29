@@ -1,12 +1,12 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useContext } from "react";
 import Header from "./components/Layout/Header";
 import Cart from "./components/Cart/Cart";
 import Chickens from "./components/Chickens/Chickens";
-import ChickensCartContextProvider from "./store/ChickensCartContextProvider";
-import PickupersContextProvider from "./store/PickupersContextProvider";
 import Business from "./components/Business-logic/Business";
+import PickuperContext from "./store/pickuper-ctx";
 
 function App() {
+  const pickuperCtx = useContext(PickuperContext);
   const [cartIsVisible, setCartIsVisible] = useState(false);
   const [businessPageIsVisible, setBusinessPageIsVisible] = useState(false);
 
@@ -24,28 +24,26 @@ function App() {
   };
 
   const backToOrder = () => {
+    pickuperCtx.clearFinalData();
     setBusinessPageIsVisible(false);
   };
 
   return (
-    <ChickensCartContextProvider>
-      <PickupersContextProvider>
-        {businessPageIsVisible ? (
-          <Business onBackToOrder={backToOrder} />
-        ) : (
-          <Fragment>
-            {cartIsVisible && (
-              <Cart onOrder={orderChickens} onClose={closeBackdrop} />
-            )}
-            <Header onShowCart={showCart} />
-
-            <main>
-              <Chickens />
-            </main>
-          </Fragment>
-        )}
-      </PickupersContextProvider>
-    </ChickensCartContextProvider>
+    <Fragment>
+      {businessPageIsVisible ? (
+        <Business onBackToOrder={backToOrder} back={backToOrder} />
+      ) : (
+        <Fragment>
+          {cartIsVisible && (
+            <Cart onOrder={orderChickens} onClose={closeBackdrop} />
+          )}
+          <Header onShowCart={showCart} />
+          <main>
+            <Chickens />
+          </main>
+        </Fragment>
+      )}
+    </Fragment>
   );
 }
 

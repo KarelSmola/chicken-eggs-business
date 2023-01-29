@@ -15,7 +15,7 @@ const Business = (props) => {
       <BusinessHeader />
       <main className={classes["main-container"]}>
         <PurchaseSummary />
-        <PickupersSummary />
+        <PickupersSummary back={props.back} />
       </main>
     </Fragment>
   );

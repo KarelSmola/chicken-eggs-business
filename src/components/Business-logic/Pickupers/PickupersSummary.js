@@ -9,7 +9,7 @@ import Button from "../../UI/Button";
 
 import classes from "./PickupersSummary.module.css";
 
-const PickupersSummary = () => {
+const PickupersSummary = (props) => {
   const pickuperCtx = useContext(PickuperContext);
   const chickenCtx = useContext(ChickenCartContext);
 

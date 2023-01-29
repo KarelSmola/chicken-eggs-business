@@ -13,6 +13,7 @@ const PickuperContext = React.createContext({
   calcFinalData: false,
   finalData: {},
   calcMessage: "",
+  clearFinalData: () => {},
 });
 
 export default PickuperContext;

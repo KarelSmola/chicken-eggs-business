@@ -101,6 +101,14 @@ const PickupersContextProvider = (props) => {
     setCalcMessage(false);
   };
 
+  const clearFinalData = () => {
+    console.log("clear data");
+
+    setCalcData([]);
+    setCalcFinalData(false);
+    setCalcMessage(true);
+  };
+
   const initial = {
     pickupers,
     addPickuper,
@@ -113,6 +121,7 @@ const PickupersContextProvider = (props) => {
     calcFinalData,
     finalData,
     calcMessage,
+    clearFinalData,
   };
 
   return (

@@ -145,13 +145,6 @@ const ChickensCartContextProvider = (props) => {
     dispatchChicken({ type: "REMOVE", chickenId: chickenId });
   };
 
-  // const chickenTheoryEggsPerDay = cartState.chickensInCart.reduce(
-  //   (acc, curr) => acc + curr.amount * curr.eggsPerDay,
-  //   0
-  // );
-
-  // console.log(chickenTheoryEggsPerDay);
-
   const theoryEggsPerDaySum = cartState.chickensInCart.reduce(
     (acc, curr) => acc + curr.eggsPerDay,
     0
