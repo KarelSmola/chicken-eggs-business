@@ -6,7 +6,7 @@
   align-content: center;
   padding: 1rem 2rem;
   border-radius: 1rem;
-  background-color: #fff3bf;
+  background-color: var(--third-color);
   font-size: 1.6rem;
 }
 
@@ -30,7 +30,7 @@
 
 .input:focus {
   outline-style: none;
-  border: 2px solid #f08c00;
+  border: 2px solid var(--main-color);
 }
 
 .plus {
@@ -43,7 +43,7 @@
 }
 
 .plus:focus svg {
-  border: 2px solid red;
+  border: 2px solid var(--red-color);
 }
 
 .plus svg {
@@ -52,9 +52,9 @@
   align-items: center;
   width: 60px;
   height: 40px;
-  border: 2px solid #f59f00;
-  background-color: #ffe066;
-  color: #f59f00;
+  border: 2px solid var(--main-color);
+  background-color: var(--btn-bcg-color);
+  color: var(--main-color);
   border-radius: 1rem;
   padding: 0.5rem;
   stroke-width: 0.3rem;

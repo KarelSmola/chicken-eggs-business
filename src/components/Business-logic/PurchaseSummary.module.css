@@ -1,10 +1,11 @@
 .container {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
-  background-color: #f59f00;
-  border-radius: 1rem;
-  gap: 1rem;
+  gap: var(--gap-small);
+  border-radius: var(--border-radius-std);
+  background-color: var(--main-color);
+  width: 70vw;
+  padding: var(--padding-medium);
 }
 
 .header {
@@ -17,11 +18,11 @@
   display: grid;
   grid-template-columns: 1.5fr repeat(4, 1fr);
   justify-items: center;
-  font-size: 1.8rem;
-  font-weight: 600;
-  padding: 1rem 1rem;
-  border-radius: 1rem;
-  background-color: #ffec99;
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-small);
+  padding: var(--padding-small);
+  border-radius: var(--border-radius-std);
+  background-color: var(--second-color);
 }
 
 .type,
@@ -32,40 +33,39 @@
 .chickens-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--gap-small);
   list-style-type: none;
-  font-size: 1.6rem;
+  font-size: var(--font-size-std);
 }
 
 .chicken {
   display: grid;
   grid-template-columns: 1.5fr repeat(4, 1fr);
   justify-items: center;
-  gap: 2rem;
-  padding: 1rem;
-  border-radius: 1rem;
-  background-color: #fff3bf;
+  padding: var(--padding-small);
+  border-radius: var(--border-radius-std);
+  background-color: var(--third-color);
 }
 
 .totals {
   display: grid;
   grid-template-columns: 1.5fr repeat(4, 1fr);
   justify-items: center;
-  gap: 2rem;
-  padding: 1rem;
-  border-radius: 1rem;
-  font-size: 1.8rem;
-  font-weight: 600;
-  background-color: #ffec99;
+  gap: var(--gap-medium);
+  padding: var(--padding-small);
+  border-radius: var(--border-radius-std);
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-small);
+  background-color: var(--second-color);
 }
 
 .summary-text {
-  font-size: 1.6rem;
+  font-size: var(--font-size-std);
   text-align: center;
   line-height: 1.5;
 }
 
 .bold {
-  font-size: 1.8rem;
-  font-weight: 600;
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-small);
 }

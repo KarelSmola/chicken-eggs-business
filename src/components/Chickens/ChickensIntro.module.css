@@ -1,12 +1,11 @@
-.chickens-summary {
+.container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 1rem;
-
+  border-radius: 1rem;
+  background-color: var(--main-color);
+  text-align: center;
   padding: 2rem 4rem;
-  border-radius: 2rem;
-  background-color: #f59f00;
   transform: translateY(-10rem);
 }
 

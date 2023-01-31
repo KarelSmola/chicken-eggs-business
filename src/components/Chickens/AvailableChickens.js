@@ -1,7 +1,7 @@
 import React from "react";
+import SingleChicken from "./SingleChicken";
 
 import classes from "./AvailableChickens.module.css";
-import SingleChicken from "./SingleChicken";
 
 const CHICKENS = [
   {

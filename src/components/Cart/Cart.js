@@ -14,10 +14,6 @@ const Cart = (props) => {
 
   const hasChickens = chickenCtx.chickensInCart.length > 0;
 
-  // const addOneChicken = (chicken) => {
-  //   chickenCtx.addChicken({ ...chicken, amount: 1 });
-  // };
-
   const addChickenInCart = (chicken) => {
     chickenCtx.addChicken({ ...chicken, amount: 1 });
   };
@@ -52,15 +48,18 @@ const Cart = (props) => {
 
   const anotherOrpington = orpingtonsWanted - orpingtonsAmount;
 
-  const inValidOrpingtonsAmount = orpingtonsWanted !== orpingtonsAmount;
+  const validOrpingtonsAmount =
+    orpingtonsWanted === orpingtonsAmount ||
+    orpingtonsAmount > orpingtonsWanted;
+
   const orpingtonOrpingtons = anotherOrpington & 1 ? "Orpington" : "Orpingtons";
   const errorMessage = `You have to order at least ${anotherOrpington} more ${orpingtonOrpingtons}`;
   const okMessage = `OK You can order your chickens`;
 
-  const message = inValidOrpingtonsAmount ? errorMessage : okMessage;
+  const message = validOrpingtonsAmount ? okMessage : errorMessage;
 
   const orderChickens = () => {
-    if (inValidOrpingtonsAmount) {
+    if (!validOrpingtonsAmount) {
       setOrpingtonError(true);
       return;
     }
@@ -68,9 +67,9 @@ const Cart = (props) => {
     props.onOrder();
   };
 
-  const errorClasses = inValidOrpingtonsAmount
-    ? `${classes.message} ${classes.error}`
-    : `${classes.message}`;
+  const errorClasses = validOrpingtonsAmount
+    ? `${classes.message}`
+    : `${classes.message} ${classes.error}`;
 
   return (
     <Modal onClose={props.onClose}>

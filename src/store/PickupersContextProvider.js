@@ -17,6 +17,12 @@ const PickupersContextProvider = (props) => {
   const theoryDayRevenue = chickenCtx.theoryDayRevenueSum;
   const theoryMonthRevenue = (theoryDayRevenue * productiveDays).toFixed(2);
 
+  const clear = () => {
+    setCalcData([]);
+    setCalcFinalData(false);
+    setCalcMessage(true);
+  };
+
   const addPickuper = (pickuper) => {
     if (pickupers.length === 4) {
       return;
@@ -31,9 +37,7 @@ const PickupersContextProvider = (props) => {
       },
     ]);
 
-    setCalcData([]);
-    setCalcFinalData(false);
-    setCalcMessage(true);
+    clear();
   };
 
   const removePickuper = (pickuperId) => {
@@ -41,9 +45,7 @@ const PickupersContextProvider = (props) => {
       prevPickupers.filter((pickuper) => pickuper.id !== pickuperId)
     );
 
-    setCalcData([]);
-    setCalcFinalData(false);
-    setCalcMessage(true);
+    clear();
   };
 
   const pickupersData = pickupers.map((pickuper) => {
@@ -102,11 +104,7 @@ const PickupersContextProvider = (props) => {
   };
 
   const clearFinalData = () => {
-    console.log("clear data");
-
-    setCalcData([]);
-    setCalcFinalData(false);
-    setCalcMessage(true);
+    clear();
   };
 
   const initial = {

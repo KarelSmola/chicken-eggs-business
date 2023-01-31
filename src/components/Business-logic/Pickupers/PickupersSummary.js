@@ -14,7 +14,7 @@ const PickupersSummary = (props) => {
   const chickenCtx = useContext(ChickenCartContext);
 
   return (
-    <div className={classes.summary}>
+    <div className={classes.container}>
       <AddPickuper />
       <div className={classes["pickupers-team-row-title"]}>
         <p>Pickuper {pickuperCtx.pickupers.length} of 4</p>

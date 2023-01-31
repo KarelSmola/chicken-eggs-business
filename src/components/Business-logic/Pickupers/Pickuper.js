@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import PickuperContext from "../../../store/pickuper-ctx";
-import MinusIcon from "../../UI/Icons/MinusIcon";
 import XmarkIcon from "../../UI/Icons/XmarkIcon";
 
 import classes from "./Pickuper.module.css";

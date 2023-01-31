@@ -10,16 +10,16 @@
   justify-content: center;
   align-items: center;
   padding: 2rem 0rem;
-  gap: 1rem;
-  background-color: #ffd43b;
+  gap: var(--gap-small);
+  background-color: var(--header-color);
 }
 
 .title {
-  font-size: 4rem;
-  font-weight: 800;
+  font-size: var(--font-size-header);
+  font-weight: var(--font-weight-large);
 }
 
 .title-small {
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-large);
 }

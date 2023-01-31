@@ -4,6 +4,7 @@ import Cart from "./components/Cart/Cart";
 import Chickens from "./components/Chickens/Chickens";
 import Business from "./components/Business-logic/Business";
 import PickuperContext from "./store/pickuper-ctx";
+import "./variables.css";
 
 function App() {
   const pickuperCtx = useContext(PickuperContext);

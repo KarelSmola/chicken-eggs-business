@@ -3,7 +3,7 @@
   display: flex;
   justify-content: flex-start;
   width: 100%;
-  gap: 1rem;
+  gap: var(--gap-small);
   font-weight: 600;
 }
 
@@ -11,9 +11,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ffec99;
-  padding: 1rem;
-  border-radius: 1rem;
+  background-color: var(--second-color);
+  padding: var(--padding-small);
+  border-radius: var(--border-radius-std);
   width: 15rem;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .black-title {
-  color: #000;
+  color: var(--black-color);
 }
 
 .pickupers {
@@ -30,15 +30,15 @@
   display: flex;
   justify-content: flex-start;
   width: 100%;
-  gap: 1rem;
+  gap: var(--gap-small);
 }
 
 .pickuper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fff3bf;
-  padding: 1rem;
-  border-radius: 1rem;
+  background-color: var(--third-color);
+  padding: var(--padding-small);
+  border-radius: var(--border-radius-std);
   width: 15rem;
 }

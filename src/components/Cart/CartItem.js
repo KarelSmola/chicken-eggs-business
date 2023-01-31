@@ -1,6 +1,7 @@
 import React from "react";
 import PlusIcon from "../UI/Icons/PlusIcon";
 import MinusIcon from "../UI/Icons/MinusIcon";
+
 import classes from "./CartItem.module.css";
 
 const CartItem = (props) => {

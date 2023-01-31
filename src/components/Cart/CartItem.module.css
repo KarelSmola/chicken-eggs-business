@@ -4,7 +4,7 @@
   grid-template-rows: 1fr 1fr;
   align-items: center;
   padding: 1rem;
-  background-color: #fff3bf;
+  background-color: var(--third-color);
   border-radius: 1rem;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .plus:focus svg {
-  border: 2px solid red;
+  border: 2px solid var(--red-color);
 }
 
 .plus svg {
@@ -51,9 +51,9 @@
   align-items: center;
   width: 55px;
   height: 35px;
-  border: 2px solid #f59f00;
-  background-color: #ffe066;
-  color: #f59f00;
+  border: 2px solid var(--main-color);
+  background-color: var(--btn-bcg-color);
+  color: var(--main-color);
   border-radius: 1rem;
   padding: 0.5rem;
   stroke-width: 0.3rem;

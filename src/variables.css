@@ -1,0 +1,33 @@
+:root {
+  /* --- COLORS --- */
+  --main-color: #f59f00;
+  --second-color: #ffec99;
+  --third-color: #fff3bf;
+  --header-color: #ffd43b;
+  --btn-bcg-color: #ffe066;
+  --btn-hover-color: #fab005;
+  --dark-dark-orange-color: #d9480f;
+
+  --white-color: #fff;
+  --black-color: #000;
+  --light-grey-color: #bbb;
+  --red-color: #f00;
+
+  /* --- SPACING --- */
+  --padding-small: 1rem;
+  --padding-medium: 2rem;
+  --gap-small: 1rem;
+  --gap-medium: 2rem;
+
+  /* --- --- */
+  --border-radius-std: 1rem;
+
+  /* ---FONTS --- */
+  --font-size-std: 1.6rem;
+  --font-size-title: 1.8rem;
+  --font-size-large: 2rem;
+  --font-size-header: 4rem;
+  --font-weight-small: 600;
+  /* --font-weight-medium: 700; */
+  --font-weight-large: 800;
+}
