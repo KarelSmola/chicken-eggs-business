@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/chicken-eggs-business/static/css/main.691964c8.css",
+    "main.js": "/chicken-eggs-business/static/js/main.65d209d1.js",
+    "static/media/eggs_1.jpg": "/chicken-eggs-business/static/media/eggs_1.66415402597ba7200df1.jpg",
+    "index.html": "/chicken-eggs-business/index.html",
+    "main.691964c8.css.map": "/chicken-eggs-business/static/css/main.691964c8.css.map",
+    "main.65d209d1.js.map": "/chicken-eggs-business/static/js/main.65d209d1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.691964c8.css",
+    "static/js/main.65d209d1.js"
+  ]
+}
